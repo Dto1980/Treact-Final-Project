@@ -1,5 +1,4 @@
-
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -93,13 +92,15 @@ button {
 }
 
 
+
+
 /* Landing */
 
 
 
 
-.nav {
-    padding-top: 32px;
+nav {
+    padding: 32px;
     
 }
 
@@ -158,7 +159,7 @@ button {
     height: 2px;
     width: 100%;
     background: #6415ff;
-    transition: all300ms ease;
+    transition: all 300ms ease;
     opacity: 0;
 }
 
@@ -174,6 +175,10 @@ button {
     width: auto;
     transition: 300ms ease;
     text-decoration: none;
+}
+
+.nav__link--primary:hover {
+    background-color: #17053b;
 }
 
 .btn__menu {
@@ -250,6 +255,10 @@ header .row {
     font-size: 16px;
     font-weight: 700;
     transition: all 300ms ease;
+}
+
+.header__email--btn:hover {
+    background-color: #17053b;
 }
 
 .header__customers {
@@ -412,6 +421,10 @@ header .row {
     margin-top: 32px;
 }
 
+.btn:hover {
+    background-color: #17053b;
+}
+
 .quality__img--wrapper {
     border-radius: 4px;
     border: 1px solid rgb(229, 231, 235);
@@ -459,6 +472,7 @@ header .row {
 .steps__img--wrapper {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .steps__img {
@@ -777,6 +791,9 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+.plan__button:hover {
+    background-color: rgba(100, 21, 255, 0.8);
+}
 
 .plan.plan:nth-child(1) .plan__stripe, .plan.plan:nth-child(1) .plan__button {
     color: #f7fafc;
@@ -931,6 +948,10 @@ section {
 .testimonial__buttons {
     display: flex;
     align-items: center;
+}
+
+.testimonial__button:hover {
+    background-color: #e2e8f0;
 }
 
 .testimonial__button {
@@ -1182,4 +1203,76 @@ footer {
 .footer__social--link svg {
     height: 32px;
     width: 32px;
+}
+
+SMALL PHONES, TABLETS, LARGE SMARTPHONES
+@media (max-width: 728px) {
+   body {
+         flex-direction: column;
+        
+   }
+
+   h1 {
+        text-align: center;
+         font-size: 36px;
+   }
+
+   .nav {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .row {
+    text-align: center;
+    font-size: 28px;
+   }
+    .nav__links {
+     display: none; 
+    }   
+
+    .header__email--input {
+        max-width: 100%;
+        padding-right: 0px;
+        justify-content: center;
+    }
+
+    .header__email--btn {
+        position: absolute;
+        max-width: 50%;
+    }
+
+    .header__img--wrapper {
+        max-width: 100%;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quality__img--wrapper {
+        max height: 100%vh;
+    }
+
+    .steps__img--wrapper {
+        display: none;
+        max-height: 100%vh;
+    }
+
+    .plans {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .testimonials__img {
+        display: none;
+    }
+
+    .start__row, .start__buttons {
+        width: 50%;
+        justify-content: center;
+    }
 }
