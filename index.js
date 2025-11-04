@@ -1,3 +1,7 @@
-g[Attributes Style] {
-    fill: rgba(100, 21, 255, 0.15);
+function openModal() {
+  document.body.classList.add('modal--open');
+}
+    
+function closeModal() {
+  document.body.classList.remove('modal--open');
 }
