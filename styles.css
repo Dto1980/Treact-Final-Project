@@ -1,9 +1,12 @@
   * {
+      width: 100%;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
       color: #7342d6;
+      
+
   }
 
 
@@ -12,8 +15,13 @@
       overflow-x: hidden;
   }
 
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+
   section {
-      padding: 0 32px;
+      padding: 5vw 3vw;
   }
 
   .section__tag {
@@ -28,6 +36,13 @@
       width: 100%;
       max-width: 1280px;
       margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .row>* {
+      flex: 1 1 0%;
   }
 
   .color__gray {
@@ -38,9 +53,6 @@
       color: #6415ff;
   }
 
-  img {
-      width: 100%;
-  }
 
   p {
       font-size: 18px;
@@ -73,6 +85,11 @@
 
   .container {
       padding: 96px 0;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      padding: 0 16px;
   }
 
   .btn {
@@ -92,6 +109,12 @@
       border: none;
   }
 
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+  }
+
 
   /* Landing */
 
@@ -106,26 +129,29 @@
   .nav__row {
       display: flex;
       justify-content: space-between;
-        align-items: center;    
-        width: 100%;
-        max-width: 1280px;
-        padding: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1280px;
+      padding: 0 16px;
+      box-sizing: border-box;
   }
 
   .nav__logo {
       display: flex;
       align-items: center;
-     gap: 12px;
+      gap: 12px;
   }
 
   .img__logo {
       width: 40px;
-      height: 40px;
+      max-width: 120px;
+      height: auto;
   }
 
   .nav__logo--title {
       font-size: 24px;
-        font-weight: bold;
+      font-weight: bold;
   }
 
   .nav__links {
@@ -298,20 +324,21 @@
 
   .header__email {
       width: 100%;
-      max-width: 448px;
-      height: 68px;
+      max-width: 440px;
       position: relative;
-      display: flex;
-      justify-content: flex-end;
+      display: flex !important;
+      flex-direction: column !important;
+    
       align-items: center;
+      gap: 12px;
       color: rgb(36, 62, 99);
   }
 
   .header__email input,
-.header__email button {
-  padding: 12px;
-  font-size: 16px;
-}
+  .header__email button {
+      padding: 12px;
+      font-size: 16px;
+  }
 
   .header__email--input {
       width: 100%;
@@ -1194,9 +1221,10 @@
   /* footer */
 
   footer {
-      padding: 96px 32px;
+      padding: 5vw 3vw;
       background-color: rgb(100, 21, 255);
       margin-bottom: -32px;
+      text-align: center;
       position: relative;
       overflow: hidden;
   }
@@ -1228,6 +1256,9 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 12px;
   }
 
   .footer__column {
@@ -1322,6 +1353,24 @@
   /* Large phones and tablets */
   @media (max-width: 1280px) {
 
+      html,
+      body {
+          overflow-x: hidden;
+      }
+
+      img,
+      video {
+          max-width: 100%;
+          height: auto;
+      }
+
+      .container {
+          width: 100%;
+          max-width: 1200px;
+          margin: auto;
+          padding: 0 16px;
+      }
+
       .header__description {
           width: 50%;
       }
@@ -1341,6 +1390,11 @@
           padding: 0%;
           flex-direction: column;
           font-family: sans-serif;
+      }
+
+      .some-element {
+          flex-direction: column;
+          align-items: center;
       }
 
       h2 {
@@ -1372,12 +1426,14 @@
       #header .header__email {
           flex-direction: column !important;
           align-items: stretch !important;
+          width: 100%;
+          max-width: 440px;
+          gap: 12px;
       }
 
       #header .header__email input,
       #header .header__email button {
-          width: 100% ;
-          max-width: 440px ;
+          width: 100%;
           box-sizing: border-box;
       }
 
@@ -1407,10 +1463,23 @@
       html,
       body {
           flex-direction: column;
+          font-size: 0.95rem;
+      }
+
+      h1 {
+          font-size: 1.8rem;
+      }
+
+      .hero__image {
+          width: 90vw;
       }
 
       h2 {
-          font-size: 32px;
+          font-size: 1.6rem;
+      }
+
+      p {
+          font-size: 1rem;
       }
 
       .nav__links {
@@ -1421,9 +1490,27 @@
           display: block;
       }
 
+      .modal__backdrop {
+          padding-top: 60px;
+      }
+
+      .modal__link {
+          font-size: 20px;
+      }
+
+      .modal__link--primary {
+          font-size: 18px;
+          padding: 12px 30px;
+      }
+
       #row .nav__row {
-          flex-direction: column;
-          align-items: center;
+          flex-direction: row; 
+          justify-content: space-between;
+          padding: 0 20px;
+      }
+
+      .nav__logo img {
+          width: 100px;
       }
 
       nav {
@@ -1455,16 +1542,15 @@
           width: 100%;
           max-width: 440px;
           display: flex !important;
-          flex-direction: row !important;
-          justify-content: flex-end !important;
-          align-items: center !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          align-items: stretch !important;
           gap: 12px;
-          position: relative;
       }
 
       #header .header__email input,
       #header .header__email button {
-          width: auto !important;
+          width: 100% !important;
           max-width: none !important;
           box-sizing: border-box;
       }
@@ -1485,7 +1571,7 @@
           text-align: center;
       }
 
-      
+
 
       .header__email--btn {
           width: 100%;
@@ -1513,7 +1599,7 @@
 
 
       #features .section__title {
-          font-size: 36px;
+          font-size: 1.5rem;
       }
 
       #features .section__para {
@@ -1529,7 +1615,7 @@
 
       #quality .container,
       #steps .container {
-          padding: 80px 0;
+          padding: 10vw;
       }
 
       #quality .row,
@@ -1598,7 +1684,7 @@
       }
 
       .plan__price {
-          font-size: 24px;
+          font-size: 1.25rem;
       }
 
       #Testimonials .container {
@@ -1619,7 +1705,7 @@
       #Testimonials .section__tag {
           flex-direction: column;
           text-align: center;
-          margin-top: 36px;
+          margin-top: 1.5rem;
       }
 
       #start .container {
@@ -1656,8 +1742,16 @@
 
   /* EXTRA SMALL DEVICES */
   @media (max-width: 570px) {
+
       h2 {
-          font-size: 28px;
+          font-size: 1.25rem;
       }
 
+      .modal__backdrop {
+          padding-top: 40px;
+      }
+
+      .modal__link {
+          font-size: 18px;
+      }
   }
